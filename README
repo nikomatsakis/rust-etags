@@ -1,0 +1,6 @@
+The ctags.rust file here contains Exuberant Ctags definitions for the
+Rust language.  Just append its contents to your ~/.ctags file:
+
+	cat ctags.rust >> ~/.ctags
+
+Exuberant Ctags can be found at <http://ctags.sourceforge.net/index.html>.

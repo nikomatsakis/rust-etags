@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [[ "$1" == "" ]]; then
+    echo Usage: rust-ctags dirs...
+    exit 1
+fi
+
+MYDIR="$(dirname $1)"
+CTAGS="$MYDIR/ctags.rust"
+
+if [ ! -f "$CTAGS" ]; then
+  echo ctags.rust definition not found
+  echo Searched at: "$CTAGS"
+  exit 1
+fi
+
+rm -f TAGS
+
+for SRCDIR in "$@"; do
+    echo "Indexing $SRCDIR"
+
+    if [ ! -d "$SRCDIR" ]; then
+        echo Source directory "'"$SRCDIR"'" not found.
+        exit 1
+    fi
+
+    ctags -a -e -f TAGS --options="$CTAGS" --languages=Rust --recurse "$SRCDIR"
+done

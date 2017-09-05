@@ -15,6 +15,8 @@ See also:
 
 - the [rusty tags] crate
 - the [cargo tags] crate
+- the [retag] crate
 
 [rusty tags]: https://crates.io/crates/rusty-tags
 [cargo tags]: https://crates.io/crates/cargo-ctags
+[retag]: https://crates.io/crates/retag

@@ -13,6 +13,8 @@ PRs welcome! =)
 
 See also:
 
-- the [rusty tags] crate, which I've never tried, but it looks cool!
+- the [rusty tags] crate
+- the [cargo tags] crate
 
 [rusty tags]: https://crates.io/crates/rusty-tags
+[cargo tags]: https://crates.io/crates/cargo-ctags

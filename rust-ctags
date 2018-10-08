@@ -5,7 +5,7 @@ if [[ "$1" == "" ]]; then
     exit 1
 fi
 
-MYDIR="$(dirname $1)"
+MYDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CTAGS="$MYDIR/ctags.rust"
 
 if [ ! -f "$CTAGS" ]; then

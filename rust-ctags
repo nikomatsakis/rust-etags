@@ -8,6 +8,13 @@ fi
 MYDIR="$(dirname $0)"
 CTAGS="$MYDIR/ctags.rust"
 
+# case when rust-ctags in PATH
+if [ ! -f "$CTAGS" ]; then
+  ME="$(readlink $0)" # check if it symlinked
+  ME="${ME:-$0}" # or just $0 by default
+  CTAGS="$(dirname $ME)/ctags.rust"
+fi
+
 if [ ! -f "$CTAGS" ]; then
   echo ctags.rust definition not found
   echo Searched at: "$CTAGS"
